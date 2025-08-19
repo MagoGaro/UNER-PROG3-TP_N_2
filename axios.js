@@ -163,110 +163,14 @@ const eliminar_producto_archivo = async ()  => {
 
 }
 
-
-
-
-// Usamos readline, para poder pedir valores desde consola.
-
-const readline = require('readline/promises').createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-
-/*
-async function main() {
-    try{
-        const limit = await readline.question('¿Cuántos productos quieres ver? (deja vacío para el número por defecto): ');
-
-        let productos = await get_productos_limite();
-
-        if (limit && !isNaN(limit)) {
-            productos = await get_productos_limite(limit);
-
-        }
-
-        escribir_archivo(productos);
-
-    }catch(error){
-        console.error(error);
-    }
-}*/
-
-/*
-async function main() {
-    try{
-       const producto = {
-            "id": parseInt(await readline.question('Inserte id del producto: ')),
-            "title": await readline.question('Inserte nombre del producto: '),
-            "price": parseFloat(await readline.question('Inserte precio del producto: ')),
-            "description": await readline.question('Inserte descripción del producto: '),
-            "category": await readline.question('Inserte categoria del producto: '),
-            "image": await readline.question('Inserte url de la imagen del producto: ')
-        }
-
-        await post_nuevo_producto(producto);
-
-        // Aprovechamos esta parte para no volvera pedir los datos y tambien agregar este producto al archivo local.
-        guardar_producto_archivo(producto);
-
-    }catch(error){
-        console.error(error);
-    }finally{
-        readline.close();
-    }
-}*/
-
-/*
-async function main() {
-    try{
-
-        const producto = await get_producto_id();
-        console.log(producto);
-
-    }catch(error){
-        console.error(error);
-    }finally{
-        readline.close();
-    }
-}*/
-
-/*
-async function main() {
-    try{
-
-        await delete_producto_id();
-
-    }catch(error){
-        console.error(error);
-    }finally{
-        readline.close();
-    }
-}*/
-
-/*
-async function main() {
-    try{
-
-        await put_producto_id();
-
-    }catch(error){
-        console.error(error);
-    }finally{
-        readline.close();
-    }
-}*/
-/*
-async function main() {
-    try{
-
-        await eliminar_producto_archivo();
-
-    }catch(error){
-        console.error(error);
-    }finally{
-        readline.close();
-    }
-}*/
-
-main()
+module.exports = {
+    get_productos,
+    get_productos_limite,
+    escribir_archivo,
+    post_nuevo_producto,
+    get_producto_id,
+    delete_producto_id,
+    put_producto_id,
+    eliminar_producto_archivo,
+    guardar_producto_archivo
+};
