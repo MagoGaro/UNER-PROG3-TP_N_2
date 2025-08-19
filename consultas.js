@@ -58,25 +58,6 @@ const escribir_archivo = async (datos_a_guardar)  => {
 
 }
 
-const producto = {
-            "id":40 ,
-            "title": 'Remera',
-            "price": 65,
-            "description":'remera de algodon manga corta',
-            "category": 'ropa masculina',
-            "image": 'imagen.com'
-        }
-const producto2 = {
-            "title": 'Remera',
-            "price": 65,
-            "description":'remera de algodon manga corta',
-            "category": 'ropa masculina',
-            "image": 'imagen.com'
-        }
-
-
-
-
  // Agregar un nuevo producto (POST).
 
  async function post_nuevo_producto(producto) {
@@ -161,15 +142,14 @@ const producto2 = {
      }
  }
 
-async function main () {
-    //const guardar = await get_productos_limite(2);
 
-   // await escribir_archivo(guardar);
-//const nproductos=await post_nuevo_producto(producto)
-//get_producto_id(3)
-delete_producto_id(10)
-put_producto(10,producto2)
-}
-
-main()
-
+// Exportar todas las funciones
+module.exports = {
+    get_productos,
+    get_productos_limite,
+    escribir_archivo,
+    post_nuevo_producto,
+    get_producto_id,
+    delete_producto_id,
+    put_producto
+};
